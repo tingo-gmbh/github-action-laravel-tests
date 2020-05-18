@@ -4,7 +4,7 @@ cd backend
 
 cp .env.example .env
 
-composer install --ignore-platform-reqs
+composer install --prefer-dist --ignore-platform-reqs
 
 php artisan key:generate
 
