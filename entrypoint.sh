@@ -2,9 +2,9 @@
 
 cd backend
 
-composer install --prefer-dist
-
 cp .env.example .env
+
+composer install --prefer-dist
 
 php artisan key:generate
 
