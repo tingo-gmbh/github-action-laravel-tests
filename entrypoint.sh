@@ -8,4 +8,4 @@ composer install --prefer-dist
 
 php artisan key:generate
 
-php artisan test
+php artisan test --exclude-group=local
