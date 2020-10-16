@@ -3,7 +3,7 @@ FROM php:7.4-apache
 
 # Basic system software
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends git zip unzip libgmp-dev curl libzip-dev libonig-dev libpng-dev && \
+    apt-get install -y --no-install-recommends git zip unzip libgmp-dev curl libzip-dev libonig-dev libpng-dev libxml2-dev && \
     pecl channel-update pecl.php.net && \
     pecl install apcu igbinary && \
     pecl bundle redis && cd redis && phpize && ./configure --enable-redis-igbinary && make && make install && \
@@ -28,7 +28,7 @@ RUN a2enmod proxy && \
     a2enmod expires
 
 # Install remaining php modules
-RUN docker-php-ext-install gmp mbstring pdo zip mysqli pdo_mysql sockets gd
+RUN docker-php-ext-install gmp mbstring pdo zip mysqli pdo_mysql sockets gd soap xml dom
 
 WORKDIR /var/www/html
 
