@@ -33,6 +33,12 @@ RUN docker-php-ext-configure gd --with-jpeg
 # Install remaining php modules
 RUN docker-php-ext-install gmp mbstring pdo zip mysqli pdo_mysql sockets gd soap xml dom
 
+# Install imagick
+RUN apt-get update && apt-get install -y \
+  libmagickwand-dev --no-install-recommends \
+  && pecl install imagick \
+  && docker-php-ext-enable imagick
+
 RUN echo "memory_limit = 1024M" > /usr/local/etc/php/conf.d/rms-php.ini
 RUN echo "date.timezone = Europe/Zurich" > /usr/local/etc/php/conf.d/rms-php.ini
 
