@@ -1,4 +1,4 @@
-FROM brueggern/laravel-tests:v2
+FROM brueggern/laravel-tests:latest
 
 WORKDIR /var/www/html
 
