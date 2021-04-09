@@ -12,7 +12,7 @@ fi
 
 cp .env.example .env
 
-composer install --prefer-dist
+composer install --prefer-dist --ignore-platform-reqs
 
 php artisan key:generate
 
