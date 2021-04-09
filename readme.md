@@ -5,3 +5,7 @@
 * Excludes group "local"
 
 The registry docker file can be found in **Dockerfile-registry**
+
+```
+docker build -t brueggern/laravel-tests:latest -f Dockerfile-Registry .
+```
