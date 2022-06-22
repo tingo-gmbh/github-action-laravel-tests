@@ -1,4 +1,4 @@
-FROM brueggern/laravel-tests:latest
+FROM registry.gitlab.com/tingo-public/laravel-tests/php-8.1:latest
 
 WORKDIR /var/www/html
 
